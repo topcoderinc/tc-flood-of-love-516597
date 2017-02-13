@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<h:head>
+	<title>Topcoder Flood of Love</title>
+	<style>
+		.ui-loader {
+			display : none !important;
+		}
+	</style>
+</h:head>
+<h:body style="font-family: monospace;">
+	<pm:page id="about">
+		<pm:header style="background-color:orangered; color: white; font-size:18px;font-family:cursive;" title="Mad Libs"/>
+		<pm:content style="margin-top: 14%; margin-left: 10%; margin-right: 10%; margin-bottom: 11%;">
+			<p:outputLabel value="Mad Libs consists of a book that has a short story on each 
+			page with many key words replaced with blanks. Beneath each blank is specified a lexical 
+			or other category, such as &quot;noun&quot;, &quot;verb&quot;, &quot;place&quot;, or &quot;part of
+			 the body&quot;. One player asks the other players, in turn, to contribute some word for the specified type
+			  for each blank, but without revealing the context for that word. Finally, the completed story is read aloud.
+			   The result is usually comic, surreal and somewhat nonsensical." />
+			<p:outputLabel value="- Wikipedia" style="float: right;font-size:17px;font-weight:bold"/>
+			<h:form>
+				<pm:field style="padding-top: 30px;">
+				<p:commandButton value="Start" style="width: 150px; margin : auto;color:white;background-color:orangered;
+					 font-weight:100;border-radius: 30px;font-family: monospace;" action="/faces/home?faces-redirect=true" />
+				</pm:field>
+			</h:form>
+		</pm:content>
+		<pm:footer style="background-color:orangered;" />
+	</pm:page>
+</h:body>
+</html>

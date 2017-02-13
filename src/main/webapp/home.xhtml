@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<h:head>
+	<title>Topcoder Flood of Love</title>
+	<style>
+		.true {
+			box-shadow:inset 0 0 4px red;
+		}
+		.ui-loader {
+			display : none !important;
+		}
+	</style>
+</h:head>
+<h:body style="font-family: monospace;">
+	<pm:page id="home">
+		<pm:header style="background-color:orangered; color: white; font-size:18px;font-family:cursive;" title="Mad Libs"  >
+			<f:facet name="left">
+				<p:button value="About"
+					style="width: 100px; margin-top:3px;
+							font-weight:100;color:black;background-color:white; border-radius: 30px;font-family: monospace;"
+					href="/faces/about.xhtml" ajax="false" />
+			</f:facet>
+		</pm:header>
+		<pm:content>
+			<p:growl autoUpdate="true"></p:growl>
+			<h:form prependId="false">
+				<p:focus for="panelgrid" />
+				<p:panelGrid id="panelgrid" columns="1" style="margin: 0 auto;max-width: 500px">
+					<pm:field id="first" style="padding-bottom:0px;">
+						<p:outputLabel value="Food(Noun)" style="min-width:100px;margin-top:16px;margin-bottom:0px;" />
+						<p:panelGrid columns="1" style="padding-left:6px;padding-right:5px;">
+							<p:inputText value="#{values.firstValue}" tabindex="1" autocomplete="off"
+								style="max-width : 300px;" styleClass="#{values.processValues(1)}">
+								<p:ajax event="blur" update="home:first home:false" process="home:first"/>
+								<p:ajax event="keypress" update="home:false" process="home:first"/>
+							</p:inputText>
+							<h:outputText value="Value cannot be empty" rendered="#{values.processValues(1)}" style="max-width : 300px;color: red;"/>
+						</p:panelGrid>
+					</pm:field>
+
+					<pm:field id="second" style="padding-bottom:0px;">
+						<p:outputLabel value="Drink(Noun)" style="min-width:100px;margin-top:16px;margin-bottom:0px;" />
+						<p:panelGrid columns="1" style="padding-left:6px;padding-right:5px;">
+							<p:inputText value="#{values.secondValue}" autocomplete="off"
+								tabindex="2" style="max-width : 300px;" styleClass="#{values.processValues(2)}">
+								<p:ajax event="blur" update="home:second home:false" process="home:second"/>
+								<p:ajax event="keypress" update="home:false" process="home:second"/>
+							</p:inputText>
+							<h:outputText value="Value cannot be empty" rendered="#{values.processValues(2)}" style="max-width : 300px;color: red;"/>
+						</p:panelGrid>
+					</pm:field>
+
+					<pm:field id="third" style="padding-bottom:0px;">
+						<p:outputLabel value="Place(Noun)" style="min-width:100px;margin-top:16px;margin-bottom:0px;" />
+						<p:panelGrid columns="1" style="padding-left:6px;padding-right:5px;">
+							<p:inputText value="#{values.thirdValue}" tabindex="3" autocomplete="off"
+								style="max-width : 300px;" styleClass="#{values.processValues(3)}">
+								<p:ajax event="blur" update="home:third home:false" process="home:third"/>
+								<p:ajax event="keypress" update="home:false" process="home:third"/>
+							</p:inputText>
+							<h:outputText value="Value cannot be empty" rendered="#{values.processValues(3)}" style="max-width : 300px;color: red;"/>
+						</p:panelGrid>
+					</pm:field>
+
+					<pm:field id="fourth" style="padding-bottom:0px;">
+						<p:outputLabel value="Adjective" style="min-width:100px;margin-top:16px;margin-bottom:0px;" />
+						<p:panelGrid columns="1" style="padding-left:6px;padding-right:5px;">
+							<p:inputText value="#{values.fourthValue}" tabindex="4" autocomplete="off"
+								style="max-width : 300px;" styleClass="#{values.processValues(4)}">
+									<p:ajax event="blur" update="home:fourth home:false" process="home:fourth"/>
+									<p:ajax event="keypress" update="home:false" process="home:fourth"/>
+							</p:inputText>
+							<h:outputText value="Value cannot be empty" rendered="#{values.processValues(4)}" style="max-width : 300px;color: red;"/>
+						</p:panelGrid>
+					</pm:field>
+
+					<pm:field id="fifth" style="padding-bottom:0px;">
+						<p:outputLabel value="Adjective" style="min-width:100px;margin-top:16px;margin-bottom:0px;" />
+						<p:panelGrid columns="1" style="padding-left:6px;padding-right:5px;">
+							<p:inputText value="#{values.fifthValue}" tabindex="5" autocomplete="off"
+								style="max-width : 300px;" styleClass="#{values.processValues(5)}">
+									<p:ajax event="blur" update="home:fifth home:false" process="home:fifth"/>
+									<p:ajax event="keypress" update="home:false" process="home:fifth"/>
+							</p:inputText>
+							<h:outputText value="Value cannot be empty" rendered="#{values.processValues(5)}" style="max-width : 300px;color: red;"/>
+						</p:panelGrid>
+					</pm:field>
+
+					<pm:field id="sixth" style="padding-bottom:0px;">
+						<p:outputLabel value="Number" style="min-width:100px;margin-top:16px;margin-bottom:0px;" />
+						<p:panelGrid columns="1" style="padding-left:6px;padding-right:5px;">
+							<p:inputText value="#{values.sixthValue}" tabindex="6" autocomplete="off" 
+								style="max-width : 300px;" styleClass="#{values.processValues(6)}" type="number" >
+									<p:ajax event="blur" update="home:sixth home:false" process="home:sixth"/>
+									<p:ajax event="keypress" update="home:false" process="home:sixth"/>
+							</p:inputText>
+							<h:outputText value="Value must be positive" rendered="#{values.processValues(6)}" style="max-width : 300px;color: red;"/>
+						</p:panelGrid>
+					</pm:field>
+
+					<pm:field id="seventh" style="padding-bottom:0px;">
+						<p:outputLabel value="Adjective" style="min-width:100px;margin-top:16px;margin-bottom:0px;" />
+						<p:panelGrid columns="1" style="padding-left:6px;padding-right:5px;">
+							<p:inputText value="#{values.seventhValue}" tabindex="7" autocomplete="off"
+								style="max-width : 300px;" styleClass="#{values.processValues(7)}">
+									<p:ajax event="blur" update="home:seventh home:false" process="home:seventh"/>
+									<p:ajax event="keypress" update="home:false" process="home:seventh"/>
+							</p:inputText>
+							<h:outputText value="Value cannot be empty" rendered="#{values.processValues(7)}" style="max-width : 300px;color: red;"/>
+						</p:panelGrid>
+					</pm:field>
+
+					<pm:field id="eighth" style="padding-bottom:0px;">
+						<p:outputLabel value="Player Name" style="min-width:100px;margin-top:16px;margin-bottom:0px;" />
+						<p:panelGrid columns="1" style="padding-left:6px;padding-right:5px;">
+							<p:inputText value="#{values.eighthValue}" tabindex="8" autocomplete="off"
+								style="max-width : 300px;" styleClass="#{values.processValues(8)}">
+									<p:ajax event="blur" update="home:eighth home:false" process="home:eighth"/>
+									<p:ajax event="keypress" update="home:false" process="home:eighth"/>
+							</p:inputText>
+							<h:outputText value="Value cannot be empty" rendered="#{values.processValues(80)}" style="max-width : 300px;color: red;"/>
+						</p:panelGrid>
+					</pm:field>
+					<pm:field id="false">
+						<p:commandButton value="Submit" tabindex="9" style="width: 150px; margin : auto;
+							font-weight:100;color:white;background-color:orangered; border-radius: 30px;font-family: monospace;"
+							action="#{processor.createFinalSentence()}" ajax="false" disabled="#{empty values.firstValue 
+							or empty values.secondValue
+							or empty values.thirdValue or empty values.fourthValue 
+							or empty values.fifthValue or empty values.sixthValue
+							or empty values.seventhValue or empty values.eighthValue or values.sixthValue lt 1}"/>
+					</pm:field>
+				</p:panelGrid>
+			</h:form>
+		</pm:content>
+		<pm:footer style="background-color:orangered;"/>
+	</pm:page>
+</h:body>
+</html>

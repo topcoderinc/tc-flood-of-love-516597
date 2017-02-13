@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+
+<h:head>
+	<title>Topcoder Flood of Love</title>
+	<style>
+		.ui-loader {
+			display : none !important;
+		}
+	</style>
+</h:head>
+<h:body style="font-family: monospace;">
+	<pm:page id="finalResult">
+		<pm:header style="background-color:orangered; color: white; font-size:18px;font-family:cursive;" title="Mad Libs"  >
+			<f:facet name="left">
+				<p:button value="About"
+					style="width: 100px; margin-top:3px;
+							font-weight:100;color:black;background-color:white; border-radius: 30px;font-family: monospace;"
+					href="/faces/about.xhtml" ajax="false" />
+			</f:facet>
+		</pm:header>
+		<pm:content style="margin-top: 14%; margin-left: 10%; margin-right: 10%; margin-bottom: 11%;">
+			<p:outputLabel value="Dear Topcoder," />
+			<p:outputLabel value="The moment I became a member I fell in love with you." />
+			<h:outputText value="Whatever happens, at the end of the day, a minute with topcoder feels like having a " style="font-size: 16px;"/>
+			<h:outputText value="#{values.firstValue}" style="color: red;font-size: 17px;font-weight:bold" />
+			<h:outputText value=" and a " style="font-size: 16px;"/>
+			<h:outputText value="#{values.secondValue}" style="color: red;font-size: 17px;font-weight:bold"/>
+			<h:outputText value=" at " style="font-size: 16px;"/>
+			<h:outputText value="#{values.thirdValue}" style="color: red;font-size: 17px;font-weight:bold"/>
+			<h:outputText value=". There would have been some " style="font-size: 16px;"/>
+			<h:outputText value="#{values.fourthValue}" style="color: red;font-size: 17px;font-weight:bold"/>
+			<h:outputText value=" times on life's way and some moments of " style="font-size: 16px;"/>
+			<h:outputText value="#{values.fifthValue}" style="color: red;font-size: 17px;font-weight:bold"/>
+			<h:outputText value=", but being a member for " style="font-size: 16px;"/>
+			<h:outputText value="#{values.sixthValue}" style="color: red;font-size: 17px;font-weight:bold"/>
+			<h:outputText value=" days feels like a lifetime.Thank you for making my day " style="font-size: 16px;"/>
+			<h:outputText value="#{values.seventhValue}" style="color: red;font-size: 17px;font-weight:bold"/>
+			<h:outputText value=" everyday." style="font-size: 16px;"/>
+			<p:outputLabel value="" />
+			<p:outputLabel value="- #{values.eighthValue}" style="float: right;color: red;font-size:17px;font-weight:bold" />
+			<h:form>
+				<pm:field style="padding-top: 30px;">
+				<p:commandButton value="Try Again" style="width: 150px; margin : auto;color:white;background-color:orangered;
+					 font-weight:100;border-radius: 30px;font-family: monospace;" action="/faces/home?faces-redirect=true" />
+				</pm:field>
+			</h:form>
+		</pm:content>
+		<pm:footer style="background-color:orangered;" />
+	</pm:page>
+</h:body>
+</html>
